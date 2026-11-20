@@ -1,0 +1,6 @@
+{
+  "name": "Tech Live",
+  "description": "Multi-platform live streaming SaaS for software development tutorials, cloud prerecorded streaming, scheduling, community Q&A, and stream health monitoring.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

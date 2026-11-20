@@ -1,0 +1,1647 @@
+You are a senior Android engineer, backend engineer, cloud streaming engineer, UI/UX designer, DevOps engineer, security engineer, and SaaS architect.
+
+I want you to build a professional, production-ready Android application for multi-platform live streaming.
+
+IMPORTANT:
+Do not create only a UI prototype.
+Do not create fake buttons that do nothing.
+Do not use mock streaming functionality where a real implementation is technically possible.
+Build the application with a scalable architecture and clearly separate Android frontend, backend API, database, cloud storage, streaming workers, payment system, and admin panel.
+
+If an external service requires API keys, OAuth credentials, payment credentials, developer approval, RTMP credentials, cloud credentials, or server configuration, create the complete integration structure and clearly identify the required configuration values. Never expose secret credentials inside the Android APK.
+
+==================================================
+1. APP PURPOSE
+==================================================
+
+Build an Android application that allows users to:
+
+1. Stream live to YouTube.
+2. Stream live to Facebook.
+3. Stream live to TikTok where official API/account permissions allow.
+4. Support Telegram-compatible streaming workflows where officially supported.
+5. Stream to custom RTMP/RTMPS destinations.
+6. Stream from the phone camera.
+7. Stream the Android screen.
+8. Stream microphone audio.
+9. Stream device audio where Android/device permissions allow.
+10. Add camera overlay while screen sharing.
+11. Upload prerecorded videos.
+12. Stream prerecorded videos to supported destinations.
+13. Loop prerecorded videos.
+14. Schedule prerecorded streams.
+15. Run cloud-based prerecorded streams after the Android app is closed.
+16. Support continuous cloud streaming for up to 7 days for eligible paid users.
+17. Support 16:9 landscape streaming.
+18. Support 9:16 portrait streaming.
+19. Support resolutions up to 4K where the device, encoder, server, and destination support it.
+20. Support 30 FPS and 60 FPS reliably.
+21. Only expose higher FPS options when technically supported by the destination.
+22. Provide stream health monitoring.
+23. Provide automatic reconnect.
+24. Provide stream history.
+25. Provide analytics.
+26. Provide subscriptions.
+27. Provide payment management.
+28. Provide a complete admin dashboard.
+29. Provide storage management.
+30. Provide notifications.
+
+The application should be designed as a real SaaS streaming platform.
+
+==================================================
+2. SUBSCRIPTION SYSTEM
+==================================================
+
+Create three account plans:
+
+FREE
+MONTHLY
+LIFETIME
+
+------------------------------------------
+FREE PLAN
+------------------------------------------
+
+Every newly registered user receives the Free plan.
+
+Free users can live stream for a maximum of:
+
+3 HOURS PER DAY
+
+Example:
+
+Daily Limit: 03:00:00
+Used: 01:25:00
+Remaining: 01:35:00
+
+The daily quota must reset automatically every day.
+
+When the user reaches 3 hours:
+
+- Prevent starting another free live stream.
+- Show the remaining reset information.
+- Offer the Monthly and Lifetime plans.
+
+Free users should have access to basic:
+
+- Camera live streaming
+- Screen sharing
+- Microphone
+- Basic stream settings
+- Basic destination integration
+- 16:9
+- 9:16
+- Basic stream statistics
+
+------------------------------------------
+MONTHLY PLAN
+------------------------------------------
+
+Price:
+
+BDT 100 / month
+
+Premium features:
+
+- Extended/unlimited streaming subject to infrastructure and destination limits
+- Prerecorded video streaming
+- Maximum 1 GB per uploaded video
+- Video looping
+- Scheduled streaming
+- Cloud streaming
+- Up to 7-day continuous cloud streaming
+- Multiple destinations
+- Custom RTMP/RTMPS
+- Stream presets
+- Advanced stream settings
+- Stream health monitoring
+- Automatic reconnect
+- Advanced analytics
+- More storage
+- Stream history
+- Priority processing
+
+------------------------------------------
+LIFETIME PLAN
+------------------------------------------
+
+Price:
+
+BDT 1,500 one-time payment
+
+Lifetime users receive premium functionality for the lifetime of their account, subject to fair-use and infrastructure policies.
+
+Admin must be able to change plan features and pricing from the backend without rebuilding the Android application.
+
+==================================================
+3. ADMIN ACCOUNT
+==================================================
+
+Create a secure Admin role.
+
+Admin accounts do NOT require a subscription.
+
+Admin has:
+
+- Unlimited streaming
+- Unlimited cloud streams
+- Unlimited scheduled streams
+- User management
+- Subscription management
+- Payment management
+- Revenue dashboard
+- Manual payment verification
+- Refund management
+- Withdrawal management
+- Video management
+- Storage management
+- Stream monitoring
+- Server monitoring
+- User suspension
+- User banning
+- Account activation/deactivation
+- Subscription modification
+- Pricing management
+- Free-plan limit management
+- Storage limit management
+- Upload limit management
+- Maximum stream duration management
+- Maximum concurrent stream management
+- Resolution management
+- FPS management
+- Notification management
+- System settings
+- Security logs
+- Audit logs
+
+Never expose admin functions to normal users.
+
+==================================================
+4. AUTHENTICATION
+==================================================
+
+Implement:
+
+- Google Sign-In
+- Email/password registration
+- Email/password login
+- Forgot password
+- Password reset
+- Email verification
+- Logout
+- Account deletion
+
+User profile must contain:
+
+- User ID
+- Name
+- Email
+- Profile image
+- Account type
+- Subscription plan
+- Subscription status
+- Subscription start date
+- Subscription expiry date
+- Daily live usage
+- Storage usage
+- Account creation date
+
+==================================================
+5. MAIN USER DASHBOARD
+==================================================
+
+Create a professional dashboard.
+
+Display:
+
+Welcome, [User Name]
+
+Current Plan:
+FREE / MONTHLY / LIFETIME
+
+Today's Live Usage:
+00:00:00 / 03:00:00
+
+Remaining Time:
+03:00:00
+
+Buttons:
+
+[START LIVE]
+[SCREEN LIVE]
+[UPLOAD VIDEO]
+[SCHEDULE STREAM]
+
+Also display:
+
+- Recent streams
+- Upcoming streams
+- Storage usage
+- Subscription status
+- Notifications
+
+Use a modern Material 3 design.
+
+Support:
+
+- Dark mode
+- Light mode
+- Responsive layouts
+- Loading states
+- Error states
+- Empty states
+- Progress indicators
+- Confirmation dialogs
+
+==================================================
+6. CAMERA LIVE STREAMING
+==================================================
+
+Implement real camera streaming.
+
+Features:
+
+- Front camera
+- Rear camera
+- Switch camera
+- Camera ON/OFF
+- Microphone ON/OFF
+- Flash where supported
+- Portrait mode
+- Landscape mode
+- Resolution selection
+- FPS selection
+- Bitrate selection
+- Audio bitrate
+- Stream title
+- Stream description
+- Thumbnail
+- Destination selection
+- Privacy settings where supported
+
+Show live preview before starting.
+
+Show real-time stream status after starting.
+
+==================================================
+7. ANDROID SCREEN STREAMING
+==================================================
+
+Implement Android screen capture using official Android screen capture APIs.
+
+Features:
+
+- Full screen capture
+- Microphone
+- Device audio where supported
+- Camera overlay
+- Camera position
+- Camera size
+- Camera ON/OFF
+- Microphone ON/OFF
+- Orientation
+- Resolution
+- FPS
+- Bitrate
+
+Example:
+
+SCREEN LIVE
+
+Camera Overlay:
+ON/OFF
+
+Microphone:
+ON/OFF
+
+Device Audio:
+ON/OFF
+
+Orientation:
+Portrait / Landscape
+
+[START STREAM]
+
+The app must request the required Android permissions correctly.
+
+==================================================
+8. PRERECORDED VIDEO SYSTEM
+==================================================
+
+Premium users can upload prerecorded videos.
+
+Maximum file size:
+
+1 GB PER VIDEO
+
+Support common formats such as:
+
+- MP4
+- MOV where supported
+- Other formats only when safely processable by the backend
+
+Validate:
+
+- File size
+- Codec
+- Resolution
+- FPS
+- Audio codec
+- Duration
+- File integrity
+
+After upload:
+
+Uploading...
+Processing...
+Validating...
+Generating thumbnail...
+Preparing stream...
+Ready to stream.
+
+Implement resumable uploads so large uploads can continue after temporary connection failures.
+
+==================================================
+9. CLOUD STREAMING
+==================================================
+
+THIS IS A CRITICAL REQUIREMENT.
+
+Do NOT depend on the Android phone remaining open for long-duration prerecorded streaming.
+
+The Android app should:
+
+- Upload video
+- Configure stream
+- Schedule stream
+- Start/stop stream
+- Monitor stream
+- Display status
+
+The backend/cloud infrastructure should:
+
+- Store video
+- Process video
+- Encode video
+- Loop video
+- Start stream
+- Maintain stream
+- Reconnect stream
+- Monitor stream
+- Stop stream
+- Generate logs
+
+Architecture:
+
+ANDROID APP
+    |
+    v
+BACKEND API
+    |
+    v
+CLOUD STORAGE
+    |
+    v
+STREAMING WORKER
+    |
+    v
+VIDEO DECODER / ENCODER
+    |
+    v
+RTMP / RTMPS
+    |
+    v
+DESTINATION PLATFORM
+
+If the user closes the Android application, the cloud stream must continue running.
+
+==================================================
+10. SEVEN-DAY STREAMING
+==================================================
+
+Paid users can configure cloud streaming duration:
+
+- 1 hour
+- 6 hours
+- 12 hours
+- 24 hours
+- 48 hours
+- 72 hours
+- 7 days
+
+Maximum:
+
+7 continuous days.
+
+The backend must monitor long-running workers.
+
+If a worker unexpectedly crashes:
+
+- Detect failure
+- Log the failure
+- Attempt automatic restart
+- Reconnect to the destination
+- Notify the user
+
+Do not falsely claim guaranteed uninterrupted streaming.
+
+==================================================
+11. VIDEO LOOP SYSTEM
+==================================================
+
+Provide:
+
+LOOP VIDEO:
+ON/OFF
+
+Options:
+
+- Play Once
+- Loop 2 times
+- Loop 5 times
+- Loop 10 times
+- Unlimited Loop
+
+For unlimited loop:
+
+VIDEO END
+   ↓
+RESTART
+   ↓
+VIDEO END
+   ↓
+RESTART
+   ↓
+CONTINUE
+
+Looping must happen server-side for cloud streaming.
+
+==================================================
+12. STREAM SCHEDULING
+==================================================
+
+Users can schedule streams.
+
+Example:
+
+Video:
+My Video.mp4
+
+Start:
+2026-12-01 08:00 PM
+
+Duration:
+7 Days
+
+Loop:
+ON
+
+Destination:
+YouTube
+
+[ SCHEDULE STREAM ]
+
+The backend should automatically start the stream at the scheduled time.
+
+Support:
+
+- One-time schedule
+- Recurring schedule
+- Duplicate schedule
+- Edit schedule
+- Cancel schedule
+
+==================================================
+13. MULTI-DESTINATION STREAMING
+==================================================
+
+Allow users to select multiple destinations.
+
+Examples:
+
+[✓] YouTube
+[✓] Facebook
+[ ] TikTok
+[✓] Custom RTMP
+
+Create separate output workers when required.
+
+Do NOT bypass any platform's:
+
+- API restrictions
+- OAuth requirements
+- account eligibility
+- rate limits
+- streaming policies
+- developer approval requirements
+
+If a platform does not provide an available official integration, provide Custom RTMP/RTMPS support where technically appropriate instead of attempting to bypass restrictions.
+
+==================================================
+14. YOUTUBE INTEGRATION
+==================================================
+
+Implement official YouTube OAuth and Live Streaming API integration.
+
+Allow:
+
+- Connect YouTube account
+- Select channel
+- Create broadcast
+- Create stream
+- Bind stream to broadcast
+- Start stream
+- Stop stream
+- Schedule stream
+- Set title
+- Set description
+- Set privacy where supported
+- Set thumbnail where supported
+- Disconnect account
+
+Never ask users to provide their Google password.
+
+Use OAuth.
+
+==================================================
+15. FACEBOOK INTEGRATION
+==================================================
+
+Implement official Facebook/Meta integration where available.
+
+Support:
+
+- OAuth
+- Page/account selection where permitted
+- Live video creation where permitted
+- Stream configuration
+- Stream start/stop
+- Stream status
+
+Follow all current Meta API permissions and eligibility requirements.
+
+==================================================
+16. TIKTOK INTEGRATION
+==================================================
+
+Implement official TikTok integration only where the relevant API/account access is available.
+
+Do not attempt to bypass TikTok restrictions.
+
+If direct API access is unavailable for a specific account:
+
+- Clearly show that direct TikTok streaming is unavailable.
+- Provide Custom RTMP/RTMPS where officially supported.
+
+==================================================
+17. TELEGRAM / OTHER DESTINATIONS
+==================================================
+
+Provide a destination architecture that can support Telegram-compatible streaming or other platforms where official technical support exists.
+
+Also provide:
+
+CUSTOM RTMP
+CUSTOM RTMPS
+
+==================================================
+18. CUSTOM RTMP/RTMPS
+==================================================
+
+Create:
+
+Add Destination
+
+Fields:
+
+Destination Name
+RTMP URL
+Stream Key
+Protocol
+
+Support:
+
+RTMP
+RTMPS
+
+Features:
+
+- Add destination
+- Edit destination
+- Delete destination
+- Test connection
+- Save destination
+- Select destination during live setup
+
+Never display saved stream keys publicly.
+
+Encrypt sensitive credentials at rest where appropriate.
+
+==================================================
+19. STREAM PRESETS
+==================================================
+
+Allow users to save streaming configurations.
+
+Examples:
+
+Gaming 1080p
+YouTube Portrait
+Facebook 1080p
+TikTok Vertical
+4K High Quality
+Low Bandwidth
+
+Preset should store:
+
+- Resolution
+- FPS
+- Bitrate
+- Audio bitrate
+- Orientation
+- Destination
+- Encoder settings
+
+Allow:
+
+Create preset
+Edit preset
+Delete preset
+Use preset
+
+==================================================
+20. VIDEO QUALITY
+==================================================
+
+Support:
+
+360p
+480p
+720p
+1080p
+1440p
+2160p / 4K
+
+FPS:
+
+24
+30
+60
+
+Only enable higher FPS if the device, encoder, server and destination support it.
+
+Do not promise 90 FPS or 4K on platforms that do not accept those settings.
+
+The app should dynamically validate destination capabilities before allowing unsupported settings.
+
+==================================================
+21. ASPECT RATIO
+==================================================
+
+Support:
+
+16:9 LANDSCAPE
+
+9:16 PORTRAIT
+
+Provide:
+
+Fit
+Crop
+Stretch
+Blur Background
+
+Do not distort important content.
+
+Automatically adapt video dimensions where required.
+
+==================================================
+22. STREAM HEALTH MONITORING
+==================================================
+
+During live streaming show:
+
+LIVE
+
+Duration
+Bitrate
+FPS
+Resolution
+Dropped Frames
+Connection Quality
+Server Status
+Encoder Status
+Destination Status
+
+Example:
+
+Duration:
+00:32:15
+
+Bitrate:
+6.4 Mbps
+
+FPS:
+60
+
+Resolution:
+1920x1080
+
+Dropped Frames:
+0.3%
+
+Connection:
+Excellent
+
+Server:
+Healthy
+
+For cloud streams also show:
+
+Worker Status
+CPU
+RAM
+Network
+Encoder
+Output Connection
+
+==================================================
+23. AUTOMATIC RECONNECT
+==================================================
+
+If a stream disconnects:
+
+Connection Lost
+
+Reconnecting...
+Attempt 1
+Attempt 2
+Attempt 3
+
+Use safe retry logic with exponential backoff.
+
+After successful reconnection:
+
+Stream Reconnected
+
+Log every reconnect event.
+
+==================================================
+24. PUSH NOTIFICATIONS
+==================================================
+
+Send notifications for:
+
+- Stream started
+- Stream stopped
+- Stream failed
+- Stream reconnected
+- Scheduled stream starting
+- Subscription activated
+- Subscription expiring
+- Payment approved
+- Payment rejected
+- Daily free quota almost exhausted
+- Storage almost full
+
+==================================================
+25. PAYMENT SYSTEM
+==================================================
+
+Create a secure payment architecture.
+
+Possible payment methods:
+
+- bKash
+- Nagad
+- Card payments
+- Other supported payment gateways
+
+Do not hard-code payment secrets inside the Android app.
+
+Payment credentials must remain on the secure backend.
+
+Support both:
+
+AUTOMATIC PAYMENT GATEWAY
+and
+MANUAL PAYMENT VERIFICATION
+
+For manual payment:
+
+Plan:
+Lifetime
+
+Amount:
+BDT 1500
+
+Payment Method:
+bKash / Nagad
+
+Transaction ID:
+[________]
+
+[SUBMIT PAYMENT]
+
+Admin can verify the payment.
+
+==================================================
+26. PAYMENT WORKFLOW
+==================================================
+
+USER SELECTS PLAN
+        ↓
+PAYMENT
+        ↓
+GATEWAY / MANUAL VERIFICATION
+        ↓
+PAYMENT VERIFIED
+        ↓
+BACKEND ACTIVATES SUBSCRIPTION
+        ↓
+PREMIUM FEATURES UNLOCKED
+
+Transaction fields:
+
+Transaction ID
+User ID
+Amount
+Currency
+Payment Method
+Plan
+Status
+Created At
+Verified At
+
+Statuses:
+
+Pending
+Paid
+Failed
+Rejected
+Refunded
+
+Never activate premium access simply because a user claims to have paid.
+
+==================================================
+27. ADMIN REVENUE DASHBOARD
+==================================================
+
+Show:
+
+Today's Revenue
+This Month's Revenue
+Lifetime Revenue
+
+Monthly Subscribers
+Lifetime Subscribers
+
+Pending Payments
+Completed Payments
+Refunded Payments
+
+Total Users
+Active Users
+
+Charts:
+
+- Daily revenue
+- Monthly revenue
+- New users
+- Active subscribers
+- Streaming hours
+
+==================================================
+28. WITHDRAWAL MANAGEMENT
+==================================================
+
+If supported by the actual payment architecture, create:
+
+Available Balance
+
+[REQUEST WITHDRAWAL]
+
+Withdrawal history:
+
+Amount
+Method
+Destination
+Status
+Date
+
+Statuses:
+
+Pending
+Processing
+Completed
+Rejected
+
+Do not create fake wallet balances.
+
+The balance must be calculated from verified transactions.
+
+==================================================
+29. STORAGE MANAGEMENT
+==================================================
+
+User dashboard:
+
+Storage Used:
+2.4 GB / 10 GB
+
+Features:
+
+- Upload
+- Delete
+- Rename
+- Search
+- Sort
+- Preview
+- Duration
+- File size
+- Upload date
+- Storage usage
+
+Admin can configure storage limits per plan.
+
+==================================================
+30. VIDEO PROCESSING
+==================================================
+
+After upload:
+
+Uploading
+Processing
+Validating Video
+Generating Thumbnail
+Checking Codec
+Preparing Stream
+Ready
+
+Use background processing.
+
+Implement resumable uploads.
+
+If upload fails:
+
+Resume Upload
+
+Do not force users to restart large uploads from zero.
+
+==================================================
+31. STREAM HISTORY
+==================================================
+
+Display:
+
+Title
+Platform
+Start Time
+End Time
+Duration
+Resolution
+Status
+
+Statuses:
+
+Completed
+Running
+Failed
+Stopped
+Scheduled
+
+Allow users to open individual stream details.
+
+==================================================
+32. ANALYTICS
+==================================================
+
+App-level analytics:
+
+- Total streaming hours
+- Number of streams
+- Successful streams
+- Failed streams
+- Average stream duration
+- Data transferred
+- Storage used
+- Active streams
+
+Only display destination-specific analytics when the official platform API provides those metrics.
+
+==================================================
+33. SECURITY
+==================================================
+
+Implement:
+
+- Secure authentication
+- Role-based access control
+- Admin-only APIs
+- Backend authorization
+- API validation
+- Rate limiting
+- File validation
+- Upload abuse protection
+- Stream abuse protection
+- Secure token storage
+- Encrypted sensitive credentials
+- Audit logs
+- Security logs
+- Account suspension
+- Account banning
+
+Roles:
+
+USER
+ADMIN
+SUPER_ADMIN
+
+Never put:
+
+- API secrets
+- OAuth client secrets
+- payment secrets
+- database passwords
+- server passwords
+
+inside the Android APK.
+
+==================================================
+34. ADMIN CONFIGURATION
+==================================================
+
+Admin can change without rebuilding the app:
+
+Free Daily Live Limit
+Monthly Price
+Lifetime Price
+Maximum Upload Size
+Maximum Storage
+Maximum Stream Duration
+Maximum Concurrent Streams
+Allowed Resolutions
+Allowed FPS
+Maintenance Mode
+Announcement Message
+
+==================================================
+35. USER ABUSE PROTECTION
+==================================================
+
+Implement:
+
+- Daily limits
+- Concurrent stream limits
+- Upload limits
+- Storage limits
+- Rate limits
+- Suspicious activity detection
+- Account suspension
+- Account banning
+- Report system
+- Terms acceptance
+- Privacy policy
+- Content policy
+
+Do not build features intended to bypass third-party platform restrictions.
+
+==================================================
+36. APP SETTINGS
+==================================================
+
+Include:
+
+Account
+Notifications
+Streaming
+Video Quality
+Storage
+Subscription
+Payment History
+Privacy
+Terms
+Help & Support
+About
+Logout
+Delete Account
+
+==================================================
+37. MAIN NAVIGATION
+==================================================
+
+Bottom navigation:
+
+HOME
+LIVE
+VIDEOS
+SCHEDULE
+ANALYTICS
+PROFILE
+
+Admin navigation:
+
+DASHBOARD
+USERS
+STREAMS
+VIDEOS
+PAYMENTS
+SUBSCRIPTIONS
+REVENUE
+WITHDRAWALS
+SERVERS
+REPORTS
+SETTINGS
+
+==================================================
+38. STREAM TEMPLATE SYSTEM
+==================================================
+
+Add a Stream Template feature.
+
+Example:
+
+"My Gaming Stream"
+
+Configuration:
+
+YouTube
+1080p
+60 FPS
+16:9
+6 Mbps
+Microphone ON
+
+User can simply tap:
+
+My Gaming Stream
+→ Start
+
+Also support:
+
+Duplicate Scheduled Stream
+
+so users can quickly create another stream using the same configuration.
+
+==================================================
+39. BACKEND ARCHITECTURE
+==================================================
+
+Use a scalable architecture:
+
+ANDROID APP
+        |
+        v
+BACKEND API
+        |
+  +-----+------+
+  |            |
+DATABASE     AUTH
+  |
+  v
+STREAM MANAGER
+  |
+  +---------+---------+
+  |         |         |
+WORKER    WORKER    WORKER
+  |         |         |
+  +---------+---------+
+            |
+       RTMP / RTMPS
+            |
+            v
+DESTINATION PLATFORMS
+
+Use background jobs/queues for:
+
+- Video processing
+- Stream scheduling
+- Stream starting
+- Stream stopping
+- Transcoding
+- Thumbnail generation
+- Cleanup
+- Notifications
+
+==================================================
+40. RECOMMENDED TECHNOLOGY
+==================================================
+
+Android:
+
+Kotlin
+Jetpack Compose
+Material 3
+
+Authentication:
+
+Firebase Authentication or secure OAuth implementation
+
+Database:
+
+PostgreSQL
+
+Cloud Storage:
+
+S3-compatible object storage or another scalable cloud storage provider
+
+Backend:
+
+Node.js/NestJS or another scalable backend
+
+Streaming:
+
+FFmpeg-based streaming workers
+
+Queue:
+
+Redis + job queue
+
+Notifications:
+
+Firebase Cloud Messaging
+
+Admin:
+
+Web-based admin dashboard
+
+Choose alternatives when technically superior, but maintain the same architecture and functionality.
+
+==================================================
+41. CLOUD STREAMING WORKER
+==================================================
+
+The cloud worker must be able to:
+
+- Read uploaded video
+- Decode video
+- Encode when necessary
+- Apply scaling
+- Apply cropping
+- Apply aspect ratio conversion
+- Apply audio processing
+- Loop video
+- Schedule start time
+- Output RTMP/RTMPS
+- Monitor connection
+- Automatically reconnect
+- Log errors
+- Stop at configured time
+
+Support long-running jobs.
+
+==================================================
+42. DATABASE DESIGN
+==================================================
+
+Create appropriate tables/models for:
+
+users
+roles
+subscriptions
+subscription_plans
+payments
+payment_methods
+withdrawals
+videos
+video_processing_jobs
+stream_destinations
+stream_presets
+streams
+scheduled_streams
+stream_workers
+stream_logs
+notifications
+storage_usage
+audit_logs
+system_settings
+
+Use proper relationships, indexes, constraints, timestamps and transaction handling.
+
+==================================================
+43. API DESIGN
+==================================================
+
+Create secure REST APIs or another appropriate API architecture for:
+
+Authentication
+Users
+Subscriptions
+Payments
+Videos
+Uploads
+Streams
+Scheduling
+Destinations
+Presets
+Analytics
+Notifications
+Admin
+Storage
+System settings
+
+Every protected endpoint must validate authentication and authorization.
+
+==================================================
+44. ERROR HANDLING
+==================================================
+
+Never show raw technical errors to normal users.
+
+Create friendly messages such as:
+
+"Unable to connect to YouTube. Please reconnect your account."
+
+"Your video could not be processed."
+
+"Your daily free streaming limit has been reached."
+
+"Your stream disconnected. Reconnecting..."
+
+"Payment verification is pending."
+
+Log detailed technical information on the backend for developers/admins.
+
+==================================================
+45. OFFLINE/NETWORK HANDLING
+==================================================
+
+The Android app should gracefully handle:
+
+- No internet
+- Slow internet
+- Temporary network failure
+- Upload interruption
+- Authentication failure
+- API failure
+
+Show:
+
+Offline
+Connecting...
+Connection restored
+
+Do not crash the application.
+
+==================================================
+46. PERFORMANCE
+==================================================
+
+Optimize for Android devices with different hardware capabilities.
+
+The app should:
+
+- Avoid unnecessary memory usage
+- Avoid unnecessary background processing
+- Handle large video uploads efficiently
+- Use foreground services when required by Android
+- Respect Android battery restrictions
+- Avoid blocking the main UI thread
+- Use efficient image/video previews
+- Use pagination for large lists
+
+==================================================
+47. LEGAL AND PLATFORM COMPLIANCE
+==================================================
+
+Create:
+
+Terms of Service
+Privacy Policy
+Refund Policy
+Acceptable Use Policy
+
+Clearly explain that users must have the rights/permissions necessary to stream uploaded content.
+
+Do not implement mechanisms to bypass:
+
+- YouTube restrictions
+- Facebook restrictions
+- TikTok restrictions
+- copyright enforcement
+- platform authentication
+- platform rate limits
+- platform account requirements
+
+==================================================
+48. ADMIN MONITORING
+==================================================
+
+Admin should see active streams:
+
+User
+Stream
+Destination
+Duration
+Resolution
+FPS
+Bitrate
+Worker
+Server
+Status
+
+Admin should be able to:
+
+View
+Stop
+Restart where technically safe
+Suspend user
+Open logs
+
+==================================================
+49. SERVER MONITORING
+==================================================
+
+Admin dashboard should show:
+
+CPU
+RAM
+Disk
+Network
+Active Workers
+Active Streams
+Failed Workers
+Storage Usage
+Queue Size
+
+Show server health:
+
+HEALTHY
+WARNING
+CRITICAL
+
+==================================================
+50. UI/UX REQUIREMENTS
+==================================================
+
+Design should look like a premium modern streaming application.
+
+Use:
+
+- Material 3
+- Rounded cards
+- Clear typography
+- Professional icons
+- Good spacing
+- Dark/light themes
+- Accessible contrast
+- Responsive design
+- Smooth transitions
+- Clear primary buttons
+- Clear error messages
+
+Do not overcrowd the interface.
+
+The most important actions should be easy to access:
+
+START LIVE
+SCREEN LIVE
+UPLOAD VIDEO
+SCHEDULE
+
+==================================================
+51. DEVELOPMENT PHASES
+==================================================
+
+Do NOT attempt to write the entire production system blindly in one huge file.
+
+Develop in phases while maintaining the complete architecture.
+
+PHASE 1:
+Android project
+UI
+Navigation
+Authentication
+User profiles
+Subscription architecture
+Free 3-hour quota
+
+PHASE 2:
+Camera streaming
+Screen streaming
+Microphone
+Device audio where supported
+RTMP/RTMPS
+
+PHASE 3:
+Video upload
+Cloud storage
+Video processing
+Thumbnails
+Video library
+
+PHASE 4:
+Looping
+Scheduling
+Cloud streaming workers
+7-day streaming
+Automatic reconnect
+
+PHASE 5:
+YouTube integration
+Facebook integration
+TikTok integration where officially available
+Custom RTMP
+
+PHASE 6:
+Payment system
+Monthly plan
+Lifetime plan
+Manual payment verification
+Admin revenue
+
+PHASE 7:
+Admin dashboard
+User management
+Stream management
+Server monitoring
+Withdrawal management
+
+PHASE 8:
+Analytics
+Notifications
+Security
+Abuse protection
+Testing
+Production deployment
+
+==================================================
+52. GOOGLE AI STUDIO DEVELOPMENT RULES
+==================================================
+
+Before writing code:
+
+1. Analyze the complete requirements.
+2. Identify which functionality belongs to Android.
+3. Identify which functionality belongs to backend.
+4. Identify which functionality requires cloud infrastructure.
+5. Identify which functionality requires external APIs.
+6. Identify required secrets/configuration variables.
+7. Create the architecture.
+8. Create the database schema.
+9. Create API specifications.
+10. Then implement the project.
+
+Do not silently remove required features.
+
+If a feature cannot be implemented directly because an external platform requires approval or credentials, implement the integration architecture and clearly mark the required configuration.
+
+Do not replace a requested real feature with a fake demo.
+
+Do not generate insecure shortcuts.
+
+Do not put backend secrets into Android code.
+
+Do not use hardcoded admin credentials.
+
+Do not create fake payment verification.
+
+Do not create fake streaming status.
+
+==================================================
+53. FINAL QUALITY REQUIREMENT
+==================================================
+
+The final application must be:
+
+- Secure
+- Scalable
+- Maintainable
+- Production-oriented
+- Modular
+- Well documented
+- Properly error handled
+- API driven
+- Cloud compatible
+- Android compatible
+- Admin manageable
+
+Every major feature should have:
+
+- UI
+- Backend API
+- Database model
+- Authentication/authorization
+- Error handling
+- Loading state
+- Success state
+- Failure state
+- Logging where appropriate
+
+When generating code, provide complete files with correct filenames and folder structure.
+
+Do not give incomplete snippets when a complete file is required.
+
+Do not use placeholder functions such as:
+
+TODO
+IMPLEMENT HERE
+FAKE STREAM
+MOCK PAYMENT
+
+unless the placeholder is specifically for credentials or external configuration that must be supplied by the developer.
+
+For external credentials, use environment variables/configuration files and explain exactly where they must be inserted.
+
+Start by creating the complete project architecture and folder structure, then proceed with implementation in a logical sequence.

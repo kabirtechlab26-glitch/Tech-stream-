@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tech Live — Admin Control Center</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="dot"></span>
+        <div>
+          <h1>Tech Live</h1>
+          <small>SaaS Admin Panel</small>
+        </div>
+      </div>
+      <nav id="adminNav"></nav>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <h2 id="sectionTitle">Dashboard</h2>
+        <div class="auth-status">
+          <span id="serverBadge" class="badge healthy">Checking Server...</span>
+          <button id="connectTokenBtn" class="btn-secondary">Connect Admin Session</button>
+        </div>
+      </header>
+      <section id="panelBody" class="panel-body"></section>
+    </main>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
